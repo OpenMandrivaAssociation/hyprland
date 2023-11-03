@@ -1,15 +1,14 @@
 Name:           hyprland
 Version:        0.31.0
-Release:        0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
-Source0:        %{name}-%{version}.tar.xz
+Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 Patch1:         0001-fixed-patchd-wlroots-build.patch
 # Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
 Patch2:         fix_ia86_std_clamp.patch
 BuildRequires:  cmake
-BuildRequires:  gcc-c++ >= 11
 BuildRequires:  git
 BuildRequires:  glslang-devel
 BuildRequires:  jq
