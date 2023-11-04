@@ -5,9 +5,9 @@ Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
-Patch1:         0001-fixed-patchd-wlroots-build.patch
+#Patch1:         0001-fixed-patchd-wlroots-build.patch
 # Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
-Patch2:         fix_ia86_std_clamp.patch
+#Patch2:         fix_ia86_std_clamp.patch
 BuildRequires:  cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
@@ -38,18 +38,9 @@ BuildRequires:  pkgconfig(xcb-icccm)
 BuildRequires:  pkgconfig(xcb-renderutil)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(xwayland)
-%if 0%{?suse_version}
-BuildRequires:  Mesa-libGLESv3-devel
-%bcond_without  xcb_errors
-%else
-%bcond_with  xcb_errors
-%endif
-%if %{with xcb_errors}
+
+BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
-%endif
-%if %{with devel}
-Suggests:       %{name}-devel
-%endif
 
 %description
 Hyprland is a dynamic tiling Wayland compositor based on wlroots
@@ -58,7 +49,6 @@ that doesn't sacrifice on its looks.
 It supports multiple layouts, fancy effects, has a very flexible IPC
 model allowing for a lot of customization, and more.
 
-%if %{with devel}
 %package devel
 Summary:        Files required to build Hyprland plugins
 Requires:       %{name}
@@ -66,22 +56,19 @@ Requires:       %{name}
 %description devel
 This package contains the neccessary files that are required to
 build plugins for hyprland.
-%endif
 
 %prep
 %autosetup -p1
-patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
+#patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
 
 %build
 %meson \
-	 -Dwlroots:xcb-errors=%{?with_xcb_errors:enabled}%{!?with_xcb_errors:disabled}
+	 -Dwlroots:xcb-errors=enabled
 %meson_build
 
 %install
-%meson_install --tags runtime,man%{?with_devel:,devel}
-%if %{with devel}
+%meson_install --tags runtime,man,devel
 rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroots.pc
-%endif
 
 %files
 %license LICENSE
@@ -96,8 +83,6 @@ rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroot
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
 
-%if %{with devel}
 %files devel
 %{_includedir}/%{name}
 %{_datadir}/pkgconfig/%{name}.pc
-%endif
