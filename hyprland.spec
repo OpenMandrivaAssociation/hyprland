@@ -58,7 +58,7 @@ This package contains the neccessary files that are required to
 build plugins for hyprland.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-source -p1
 #patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
 
 %build
