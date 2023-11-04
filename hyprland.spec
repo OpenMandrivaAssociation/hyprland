@@ -70,7 +70,7 @@ model allowing for a lot of customization, and more.
 %meson_install --tags runtime,man
 # Disable devel for now
 #devel
-rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroots.pc
+#rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroots.pc
 
 %files
 %license LICENSE
