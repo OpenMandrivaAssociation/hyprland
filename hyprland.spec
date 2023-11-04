@@ -49,13 +49,13 @@ that doesn't sacrifice on its looks.
 It supports multiple layouts, fancy effects, has a very flexible IPC
 model allowing for a lot of customization, and more.
 
-%package devel
-Summary:        Files required to build Hyprland plugins
-Requires:       %{name}
+#package devel
+#Summary:        Files required to build Hyprland plugins
+#Requires:       %{name}
 
-%description devel
-This package contains the neccessary files that are required to
-build plugins for hyprland.
+#description devel
+#This package contains the neccessary files that are required to
+#build plugins for hyprland.
 
 %prep
 %autosetup -n %{name}-source -p1
@@ -67,7 +67,9 @@ build plugins for hyprland.
 %meson_build
 
 %install
-%meson_install --tags runtime,man,devel
+%meson_install --tags runtime,man
+# Disable devel for now
+#devel
 rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroots.pc
 
 %files
@@ -83,6 +85,7 @@ rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroot
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
 
-%files devel
-%{_includedir}/%{name}
-%{_datadir}/pkgconfig/%{name}.pc
+#files devel
+#{_includedir}/%{name}
+#{_includedir}/wlr/
+#{_datadir}/pkgconfig/%{name}.pc
