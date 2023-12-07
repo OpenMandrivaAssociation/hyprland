@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.33.0
+Version:        0.33.1
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
