@@ -79,6 +79,7 @@ model allowing for a lot of customization, and more.
 %doc README.md
 %{_bindir}/Hyprland
 %{_bindir}/hyprctl
+%{_bindir}/hyprpm
 %{_datadir}/%{name}/
 %dir %{_datadir}/wayland-sessions/
 %{_datadir}/wayland-sessions/%{name}.desktop
