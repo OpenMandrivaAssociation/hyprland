@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.35.0
+Version:        0.36.0
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
@@ -13,6 +13,7 @@ BuildRequires:  git
 BuildRequires:  glslang-devel
 BuildRequires:  jq
 BuildRequires:  meson
+BuildRequires:	hyprlang
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
