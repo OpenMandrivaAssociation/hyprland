@@ -1,6 +1,6 @@
 Name:           hyprland
-Version:        0.36.0
-Release:        2
+Version:        0.37.1
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
@@ -14,6 +14,7 @@ BuildRequires:  glslang-devel
 BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
+BuildRequires:	pkgconfig(hyprcursor)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
@@ -44,6 +45,8 @@ BuildRequires:  pkgconfig(xwayland)
 
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
+
+Requires:	hyprcursor
 
 %description
 Hyprland is a dynamic tiling Wayland compositor based on wlroots
