@@ -89,6 +89,12 @@ model allowing for a lot of customization, and more.
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
+%{_datadir}/bash-completions/hyprctl
+%{_datadir}/bash-completions/hyprpm
+%{_datadir}/fish/vendor_completions.d/hyprctl.fish
+%{_datadir}/fish/vendor_completions.d/hyprpm.fish
+%{_datadir}/zsh/site-functions/_hyprctl
+%{_datadir}/zsh/site-functions/_hyprpm
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
 
