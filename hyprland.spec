@@ -2,6 +2,7 @@ Name:           hyprland
 Version:        0.40.0
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
+Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
