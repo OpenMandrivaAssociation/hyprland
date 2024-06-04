@@ -9,6 +9,7 @@ Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}
 #Patch1:         0001-fixed-patchd-wlroots-build.patch
 # Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
 #Patch2:         fix_ia86_std_clamp.patch
+Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
 BuildRequires:  cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
