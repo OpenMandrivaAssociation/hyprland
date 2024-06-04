@@ -1,6 +1,6 @@
 Name:           hyprland
-Version:        0.39.1
-Release:        2
+Version:        0.40.0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
@@ -15,6 +15,7 @@ BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
 BuildRequires:	pkgconfig(hyprcursor)
+BuildRequires:	pkgconfig(hyprwayland-scanner)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
@@ -32,6 +33,7 @@ BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
 BuildRequires:	pkgconfig(tomlplusplus)
+BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(vulkan) >= 1.2.182
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.26
