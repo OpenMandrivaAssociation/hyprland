@@ -17,7 +17,7 @@ BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
 BuildRequires:	pkgconfig(hyprcursor)
-BuildRequires:	pkgconfig(hyprwayland-scanner)
+BuildRequires:	pkgconfig(hyprwayland-scanner) = 0.3.4
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
