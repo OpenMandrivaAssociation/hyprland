@@ -1,0 +1,12 @@
+diff -uraN hyprland-source/subprojects/wlroots-hyprland/backend/drm/libliftoff.c omv-hyprland-source/subprojects/wlroots-hyprland/backend/drm/libliftoff.c
+--- hyprland-source/subprojects/wlroots-hyprland/backend/drm/libliftoff.c	2024-05-04 17:56:48.000000000 +0200
++++ omv-hyprland-source/subprojects/wlroots-hyprland/backend/drm/libliftoff.c	2024-06-05 20:15:07.817521857 +0200
+@@ -407,7 +407,7 @@
+ 		struct wlr_drm_connector *conn = state->connectors[i].connector;
+ 		struct wlr_drm_crtc *crtc = conn->crtc;
+ 
+-		int ret = liftoff_output_apply(crtc->liftoff, req, flags);
++		int ret = liftoff_output_apply(crtc->liftoff, req, flags NULL);
+ 		if (ret != 0) {
+ 			wlr_drm_conn_log(conn, test_only ? WLR_DEBUG : WLR_ERROR,
+ 				"liftoff_output_apply failed: %s", strerror(-ret));
