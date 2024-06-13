@@ -72,6 +72,8 @@ model allowing for a lot of customization, and more.
 %prep
 %autosetup -n %{name}-source -p1
 #patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
+# don't run generateVersion.sh, release tarballs have pregenerated version.h            
+sed -i '/version_h/d' meson.build
 
 %build
 %meson \
