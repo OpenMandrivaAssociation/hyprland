@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.40.0
+Version:        0.41.1
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -9,8 +9,8 @@ Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}
 #Patch1:         0001-fixed-patchd-wlroots-build.patch
 # Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
 #Patch2:         fix_ia86_std_clamp.patch
-Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
-Patch1:		fix-build.patch
+#Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
+#Patch1:		fix-build.patch
 BuildRequires:  cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
@@ -18,7 +18,8 @@ BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
 BuildRequires:	pkgconfig(hyprcursor)
-BuildRequires:	pkgconfig(hyprwayland-scanner) = 0.3.4
+BuildRequires:	pkgconfig(hyprwayland-scanner)
+BuildRequires:  pkgconfig(hyprutils)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
