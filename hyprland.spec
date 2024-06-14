@@ -97,8 +97,8 @@ sed -i '/version_h/d' meson.build
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
-#{_datadir}/bash-completion/hyprctl
-#{_datadir}/bash-completion/hyprpm
+%{_datadir}/bash-completion/completions/hyprctl
+%{_datadir}/bash-completion/completions/hyprpm
 %{_datadir}/fish/vendor_completions.d/hyprctl.fish
 %{_datadir}/fish/vendor_completions.d/hyprpm.fish
 %{_datadir}/zsh/site-functions/_hyprctl
