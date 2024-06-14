@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.40.0
+Version:        0.41.1
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -9,8 +9,8 @@ Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}
 #Patch1:         0001-fixed-patchd-wlroots-build.patch
 # Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
 #Patch2:         fix_ia86_std_clamp.patch
-Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
-Patch1:		fix-build.patch
+#Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
+#Patch1:		fix-build.patch
 BuildRequires:  cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
@@ -18,7 +18,8 @@ BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
 BuildRequires:	pkgconfig(hyprcursor)
-BuildRequires:	pkgconfig(hyprwayland-scanner) = 0.3.4
+BuildRequires:	pkgconfig(hyprwayland-scanner)
+BuildRequires:  pkgconfig(hyprutils)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
@@ -71,6 +72,8 @@ model allowing for a lot of customization, and more.
 %prep
 %autosetup -n %{name}-source -p1
 #patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
+# don't run generateVersion.sh, release tarballs have pregenerated version.h            
+sed -i '/version_h/d' meson.build
 
 %build
 %meson \
@@ -94,8 +97,8 @@ model allowing for a lot of customization, and more.
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
-%{_datadir}/bash-completion/hyprctl
-%{_datadir}/bash-completion/hyprpm
+%{_datadir}/bash-completion/completions/hyprctl
+%{_datadir}/bash-completion/completions/hyprpm
 %{_datadir}/fish/vendor_completions.d/hyprctl.fish
 %{_datadir}/fish/vendor_completions.d/hyprpm.fish
 %{_datadir}/zsh/site-functions/_hyprctl
