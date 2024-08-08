@@ -79,7 +79,7 @@ sed -i '/version_h/d' meson.build
 %{_bindir}/Hyprland
 %{_bindir}/hyprctl
 %{_bindir}/hyprpm
-%{_datadir}/%{name}/
+#{_datadir}/%{name}/
 %dir %{_datadir}/wayland-sessions/
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
