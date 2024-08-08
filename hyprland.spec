@@ -13,6 +13,7 @@ BuildRequires:  glslang-devel
 BuildRequires:  jq
 BuildRequires:  meson
 BuildRequires:	hyprlang
+BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:	pkgconfig(hyprcursor)
 BuildRequires:	pkgconfig(hyprwayland-scanner)
 BuildRequires:  pkgconfig(hyprutils)
@@ -39,6 +40,7 @@ BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.26
 BuildRequires:  pkgconfig(wayland-scanner)
 BuildRequires:  pkgconfig(wayland-server) >= 1.22
+BuildRequires:  pkgconfig(xcursor)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(xcb-icccm)
 BuildRequires:  pkgconfig(xcb-renderutil)
