@@ -1,16 +1,12 @@
 Name:           hyprland
-Version:        0.41.2
-Release:        2
+Version:        0.42.0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
-#Patch1:         0001-fixed-patchd-wlroots-build.patch
-# Source: https://github.com/hyprwm/Hyprland/pull/3589. Will be included in the next release.
-#Patch2:         fix_ia86_std_clamp.patch
-#Patch0:         https://src.fedoraproject.org/rpms/hyprland/blob/rawhide/f/no-git.patch
-#Patch1:		fix-build.patch
+
 BuildRequires:  cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
@@ -48,11 +44,12 @@ BuildRequires:  pkgconfig(xcb-icccm)
 BuildRequires:  pkgconfig(xcb-renderutil)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(xwayland)
-
+BuildRequires:	pkgconfig(aquamarine)
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
 
 Requires:	hyprcursor
+Requires:	aquamarine
 
 %description
 Hyprland is a dynamic tiling Wayland compositor based on wlroots
@@ -61,17 +58,8 @@ that doesn't sacrifice on its looks.
 It supports multiple layouts, fancy effects, has a very flexible IPC
 model allowing for a lot of customization, and more.
 
-#package devel
-#Summary:        Files required to build Hyprland plugins
-#Requires:       %{name}
-
-#description devel
-#This package contains the neccessary files that are required to
-#build plugins for hyprland.
-
 %prep
 %autosetup -n %{name}-source -p1
-#patch -p1 -d subprojects/wlroots/ < subprojects/packagefiles/wlroots-meson-build.patch
 # don't run generateVersion.sh, release tarballs have pregenerated version.h            
 sed -i '/version_h/d' meson.build
 
@@ -82,9 +70,6 @@ sed -i '/version_h/d' meson.build
 
 %install
 %meson_install --tags runtime,man
-# Disable devel for now
-#devel
-#rm %{buildroot}/%{_libdir}/libwlroots.a %{buildroot}/%{_libdir}/pkgconfig/wlroots.pc
 
 %files
 %license LICENSE
@@ -105,8 +90,3 @@ sed -i '/version_h/d' meson.build
 %{_datadir}/zsh/site-functions/_hyprpm
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
-
-#files devel
-#{_includedir}/%{name}
-#{_includedir}/wlr/
-#{_datadir}/pkgconfig/%{name}.pc
