@@ -82,6 +82,8 @@ sed -i '/version_h/d' meson.build
 %{_datadir}/hypr/wall0.png
 %{_datadir}/hypr/wall1.png
 %{_datadir}/hypr/wall2.png
+%{_datadir}/hypr/lockdead.png
+%{_datadir}/hypr/lockdead2.png
 %dir %{_datadir}/wayland-sessions/
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
