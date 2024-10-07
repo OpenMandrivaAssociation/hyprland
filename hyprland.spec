@@ -61,8 +61,18 @@ model allowing for a lot of customization, and more.
 
 %prep
 %autosetup -n %{name}-source -p1
-# don't run generateVersion.sh, release tarballs have pregenerated version.h            
-#sed -i '/version_h/d' meson.build
+sed -i '/version_h/d' meson.build
+cat > src/version.h << EOF
+#pragma once
+#define GIT_COMMIT_HASH    "0000000000000000000000000000000000000000"
+#define GIT_BRANCH         "openSUSE"
+#define GIT_COMMIT_MESSAGE "Built for %_host"
+#define GIT_COMMIT_DATE    "Thu Jan 01 00:00:00 1970"
+#define GIT_DIRTY          ""
+#define GIT_TAG            "%{version}"
+#define GIT_COMMITS        "-1"
+EOF
+sed -i 's;REPLACE_ME_WITH_PREFIX;%{_prefix};' hyprpm/src/core/DataState.cpp
 
 %build
 %meson \
