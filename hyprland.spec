@@ -5,7 +5,7 @@ Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
-Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
+Source0:        https://github.com/hyprwm/Hyprland/archive/v%{version}/Hyprland-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  git
@@ -60,9 +60,9 @@ It supports multiple layouts, fancy effects, has a very flexible IPC
 model allowing for a lot of customization, and more.
 
 %prep
-%autosetup -n %{name}-source -p1
+%autosetup -n Hyprland-%{version} -p1
 # don't run generateVersion.sh, release tarballs have pregenerated version.h            
-sed -i '/version_h/d' meson.build
+#sed -i '/version_h/d' meson.build
 
 %build
 %meson \
