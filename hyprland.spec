@@ -61,8 +61,10 @@ model allowing for a lot of customization, and more.
 
 %prep
 %autosetup -n %{name}-source -p1
-# don't run generateVersion.sh, release tarballs have pregenerated version.h            
-sed -i '/version_h/d' meson.build
+
+rm -rf subprojects/{tracy,hyprland-protocols}
+# don't run generateVersion.sh, release tarballs have pregenerated version.h
+sed -i '/scripts\/generateVersion.sh/d' meson.build
 
 %build
 %meson \
