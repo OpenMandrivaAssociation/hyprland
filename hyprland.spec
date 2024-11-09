@@ -88,6 +88,7 @@ sed -i '/scripts\/generateVersion.sh/d' meson.build
 %{_datadir}/hypr/lockdead2.png
 %dir %{_datadir}/wayland-sessions/
 %{_datadir}/wayland-sessions/%{name}.desktop
+%{_datadir}/wayland-sessions/hyprland-systemd.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
 %{_datadir}/bash-completion/completions/hyprctl
