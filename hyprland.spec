@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.45.2
+Version:        0.46.0
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -17,6 +17,7 @@ BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:	pkgconfig(hyprcursor)
 BuildRequires:	pkgconfig(hyprwayland-scanner)
 BuildRequires:  pkgconfig(hyprutils)
+BuildRequires:	pkgconfig(hyprgraphics)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
@@ -33,6 +34,7 @@ BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
+BuildRequires:	pkgconfig(re2)
 BuildRequires:	pkgconfig(tomlplusplus)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(vulkan) >= 1.2.182
@@ -51,6 +53,7 @@ BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
 
 Requires:	hyprcursor
+Requires:	hyprgraphics
 Requires:	aquamarine
 
 %description
