@@ -51,6 +51,7 @@ BuildRequires:  pkgconfig(xwayland)
 BuildRequires:	pkgconfig(aquamarine)
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
+BuildRequires:	glaze-devel
 
 Requires:	hyprcursor
 Requires:	hyprgraphics
