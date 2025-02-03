@@ -73,8 +73,8 @@ sed -i '/scripts\/generateVersion.sh/d' meson.build
 %build
 # This CrapLANG crashing during compilation time. I dont wana see it here anymore. Switch to GCC.
 # Also aquamarine compiled with CrapLANG crashing at runtime. What a shitty compiler.
-#export CC=gcc
-#export CXX=g++
+export CC=gcc
+export CXX=g++
 %meson \
 	 -Dwlroots:xcb-errors=enabled
 %meson_build
