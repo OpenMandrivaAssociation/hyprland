@@ -56,6 +56,7 @@ BuildRequires:	glaze-devel
 Requires:	hyprcursor
 Requires:	hyprgraphics
 Requires:	aquamarine
+Requires:	uwsm
 
 %description
 Hyprland is a dynamic tiling Wayland compositorthat doesn't sacrifice on its looks.
