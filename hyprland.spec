@@ -1,6 +1,6 @@
 Name:           hyprland
 Version:        0.47.2
-Release:        2
+Release:        3
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -57,6 +57,15 @@ Requires:	hyprcursor
 Requires:	hyprgraphics
 Requires:	aquamarine
 Requires:	uwsm
+
+Recommends:	xdg-desktop-portal-hyprland
+Recommends:	kitty
+Recommends:     wofi
+Recommends:     playerctl
+Recommends:     brightnessctl
+Recommends:     hyprland-qtutils
+Recommends:     mesa-dri-drivers
+Recommends:     polkit
 
 %description
 Hyprland is a dynamic tiling Wayland compositorthat doesn't sacrifice on its looks.
