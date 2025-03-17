@@ -1,6 +1,6 @@
 Name:           hyprland
 Version:        0.47.2
-Release:        3
+Release:        4
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -56,8 +56,8 @@ BuildRequires:	glaze-devel
 Requires:	hyprcursor
 Requires:	hyprgraphics
 Requires:	aquamarine
-Requires:	uwsm
 
+Recommends:	uwsm
 Recommends:	xdg-desktop-portal-hyprland
 Recommends:	kitty
 Recommends:     wofi
