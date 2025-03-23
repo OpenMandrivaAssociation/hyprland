@@ -1,6 +1,6 @@
 Name:           hyprland
-Version:        0.47.2
-Release:        4
+Version:        0.48.0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -12,6 +12,7 @@ BuildRequires:  git
 BuildRequires:  glslang-devel
 BuildRequires:  jq
 BuildRequires:  meson
+BuildRequires:	mold
 BuildRequires:	hyprlang
 BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:	pkgconfig(hyprcursor)
@@ -81,6 +82,9 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 sed -i '/scripts\/generateVersion.sh/d' meson.build
 
 %build
+# Try use mold if compiled with GCC
+%global optflags %{optflags} -fuse-ld=mold
+
 # This CrapLANG crashing during compilation time. I dont wana see it here anymore. Switch to GCC.
 # Also aquamarine compiled with CrapLANG crashing at runtime. What a shitty compiler.
 export CC=gcc
