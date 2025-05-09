@@ -1,5 +1,5 @@
 Name:           hyprland
-Version:        0.48.1
+Version:        0.49.0
 Release:        2
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
