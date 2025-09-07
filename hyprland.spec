@@ -1,6 +1,6 @@
 Name:           hyprland
 Version:        0.50.1
-Release:        1
+Release:        2
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -74,6 +74,23 @@ Hyprland is a dynamic tiling Wayland compositorthat doesn't sacrifice on its loo
 It supports multiple layouts, fancy effects, has a very flexible IPC
 model allowing for a lot of customization, and more.
 
+%package	uwsm
+Summary: Files for uwsm-managed sessions
+Requires: uwsm
+
+%description uwsm
+Files for uwsm-managed sessions.
+
+%package	devel
+Summary:	Header and protocols files for %{name}
+License:	BSD-3-Clause
+Requires:	%{name}%{?_isa} = %{EVRD}
+Requires:	cpio
+
+%description 	devel
+%{summary}.
+
+
 %prep
 %autosetup -n %{name}-source -p1
 
@@ -89,12 +106,13 @@ sed -i '/scripts\/generateVersion.sh/d' meson.build
 # Also aquamarine compiled with CrapLANG crashing at runtime. What a shitty compiler.
 export CC=gcc
 export CXX=g++
-%meson \
+# %meson \
 	 -Dwlroots:xcb-errors=enabled
 %meson_build
 
 %install
-%meson_install --tags runtime,man
+%meson_install
+#--tags runtime,man,xwayland,systemd,uwsm,hyprpm
 
 %files
 %license LICENSE
@@ -111,7 +129,6 @@ export CXX=g++
 %{_datadir}/hypr/lockdead2.png
 %dir %{_datadir}/wayland-sessions/
 %{_datadir}/wayland-sessions/%{name}.desktop
-%{_datadir}/wayland-sessions/hyprland-uwsm.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
 %{_datadir}/bash-completion/completions/hyprctl
@@ -122,3 +139,10 @@ export CXX=g++
 %{_datadir}/zsh/site-functions/_hyprpm
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
+
+%files uwsm
+%{_datadir}/wayland-sessions/hyprland-uwsm.desktop
+
+%files devel
+%{_datadir}/pkgconfig/hyprland.pc
+%{_includedir}/hyprland
