@@ -107,7 +107,7 @@ Requires:	pkgconfig(pangocairo)
 Requires:	pkgconfig(pixman-1)
 Requires:	pkgconfig(xcursor)
 Requires:	pkgconfig(libdrm)
-Requires:	pkgconfig(libinput) >=1.28
+Requires:	pkgconfig(libinput)>=1.28
 Requires:	pkgconfig(gbm)
 Requires:	pkgconfig(gio-2.0)
 Requires:	pkgconfig(re2)
