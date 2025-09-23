@@ -90,12 +90,14 @@ Requires:	cpio
 Requires:	git
 Requires:	gcc
 Requires:	meson
-Requires:	pkgconfig(g++)
+Requires:	glibc-devel
 Requires:	pkgconfig(hyprcursor)
 Requires:	pkgconfig(xcb-errors)
 Requires:	pkgconfig(hyprwayland-scanner)
 Requires:	pkgconfig(hyprland-protocols)
 Requires:	pkgconfig(tomlplusplus)
+Requires:	pkgconfig(aquamarine)
+Requires:	pkgconfig(hyprutils)
 
 %description 	devel
 %{summary}.
