@@ -1,6 +1,6 @@
 Name:           hyprland
 Version:        0.51.1
-Release:        3
+Release:        4
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -90,6 +90,8 @@ Requires:	cpio
 Requires:	git
 Requires:	gcc-c++
 Requires:	meson
+Requires:	make
+Requires:	glaze-devel
 Requires:	glibc-devel
 Requires:	pkgconfig(hyprcursor)
 Requires:	pkgconfig(xcb-errors)
