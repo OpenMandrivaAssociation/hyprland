@@ -90,6 +90,7 @@ Requires:	cpio
 Requires:	git
 Requires:	meson
 Requires:	make
+Requires:	clang
 Requires:	glaze-devel
 Requires:	glibc-devel
 Requires:	pkgconfig(hyprcursor)
