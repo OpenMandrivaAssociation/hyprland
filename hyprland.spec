@@ -98,7 +98,19 @@ Requires:	pkgconfig(hyprland-protocols)
 Requires:	pkgconfig(tomlplusplus)
 Requires:	pkgconfig(aquamarine)
 Requires:	pkgconfig(hyprutils)
-
+Requires:	pkgconfig(hyprgraphics)
+Requires:	pkgconfig(wayland-server>=1.22.90
+Requires:	pkgconfig(wayland-protocols>=1.45
+Requires:	pkgconfig(cairo)
+Requires:	pkgconfig(pango)
+Requires:	pkgconfig(pangocairo)
+Requires:	pkgconfig(pixman-1)
+Requires:	pkgconfig(xcursor)
+Requires:	pkgconfig(libdrm)
+Requires:	pkgconfig(libinput) >=1.28
+Requires:	pkgconfig(gbm)
+Requires:	pkgconfig(gio-2.0)
+Requires:	pkgconfig(re2)
 %description 	devel
 %{summary}.
 
