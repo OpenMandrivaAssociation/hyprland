@@ -90,7 +90,7 @@ Requires:	cpio
 Requires:	git
 Requires:	meson
 Requires:	make
-Requires:	llvn
+Requires:	llvm
 Requires:	gcc-c++
 Requires:	glaze-devel
 Requires:	glibc-devel
