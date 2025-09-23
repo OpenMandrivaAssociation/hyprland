@@ -99,8 +99,8 @@ Requires:	pkgconfig(tomlplusplus)
 Requires:	pkgconfig(aquamarine)
 Requires:	pkgconfig(hyprutils)
 Requires:	pkgconfig(hyprgraphics)
-Requires:	pkgconfig(wayland-server>=1.22.90
-Requires:	pkgconfig(wayland-protocols>=1.45
+Requires:	pkgconfig(wayland-server)>=1.22.90
+Requires:	pkgconfig(wayland-protocols)>=1.45
 Requires:	pkgconfig(cairo)
 Requires:	pkgconfig(pango)
 Requires:	pkgconfig(pangocairo)
