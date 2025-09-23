@@ -88,7 +88,7 @@ Requires:	%{name}%{?_isa} = %{EVRD}
 Requires:	cpio
 # Needed for plugin system
 Requires:	git
-Requires:	gcc
+Requires:	gcc-c++
 Requires:	meson
 Requires:	glibc-devel
 Requires:	pkgconfig(hyprcursor)
