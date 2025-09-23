@@ -1,6 +1,6 @@
 Name:           hyprland
 Version:        0.51.1
-Release:        1
+Release:        2
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -86,6 +86,13 @@ Summary:	Header and protocols files for %{name}
 License:	BSD-3-Clause
 Requires:	%{name}%{?_isa} = %{EVRD}
 Requires:	cpio
+# Needed for plugin system
+Requires:	pkgconfig(hyprcursor)
+Requires:	pkgconfig(xcb-errors)
+Requires:  pkgconfig(hyprwayland-scanner)
+Requires:	pkgconfig(hyprland-protocols)
+Requires:	pkgconfig(tomlplusplus)
+Requires:	gcc
 
 %description 	devel
 %{summary}.
