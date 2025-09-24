@@ -58,7 +58,6 @@ Requires:	hyprcursor
 Requires:	hyprgraphics
 Requires:	aquamarine
 
-Recommends:	uwsm
 Recommends:	xdg-desktop-portal-hyprland
 Recommends:	kitty
 Recommends:     wofi
