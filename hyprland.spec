@@ -1,6 +1,6 @@
 Name:           hyprland
-Version:        0.51.1
-Release:        7
+Version:        0.52.0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
@@ -63,7 +63,7 @@ Recommends:	kitty
 Recommends:     wofi
 Recommends:     playerctl
 Recommends:     brightnessctl
-Recommends:     hyprland-qtutils
+Recommends:     hyprland-guiutils
 Recommends:     mesa-dri-drivers
 Recommends:     polkit
 
