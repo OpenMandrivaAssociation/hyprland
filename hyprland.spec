@@ -1,3 +1,5 @@
+# As of 0.53.0 meson has been removed
+
 Name:           hyprland
 Version:        0.53.0
 Release:        1
@@ -8,6 +10,7 @@ URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 
 BuildRequires:  make
+BuildRequires:	cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
 BuildRequires:  jq
@@ -125,19 +128,17 @@ Requires:	pkgconfig(xcb-icccm)
 %autosetup -n %{name}-source -p1
 
 rm -rf subprojects/{tracy,hyprland-protocols}
+
 # don't run generateVersion.sh, release tarballs have pregenerated version.h
 #sed -i '/scripts\/generateVersion.sh/d' meson.build
 
 # Try use mold if compiled with GCC
-#%global optflags %{optflags} -fuse-ld=mold
-
-# This CrapLANG crashing during compilation time. I dont wana see it here anymore. Switch to GCC.
-# Also aquamarine compiled with CrapLANG crashing at runtime. What a shitty compiler.
-#export CC=gcc
-#export CXX=g++
-
+%global optflags %{optflags} -fuse-ld=mold
 
 %build
+export CC=gcc
+export CXX=g++
+%cmake
 %make_build all
 
 %install
@@ -174,5 +175,4 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 
 %files devel
 %{_datadir}/pkgconfig/hyprland.pc
-%{_includedir}/hyprland
-%{_includedir}/src/version.h
+%{_includedir}/%{name}
