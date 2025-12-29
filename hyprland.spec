@@ -175,3 +175,4 @@ export CXX=g++
 
 %files devel
 %{_datadir}/pkgconfig/hyprland.pc
+%{_includedir}/%{name}
