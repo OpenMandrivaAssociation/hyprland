@@ -54,6 +54,7 @@ BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
 BuildRequires:	glaze-devel
 BuildRequires:	pkgconfig(hyprwire)
+BuildRequires:	hyprwire
 
 Requires:	hyprcursor
 Requires:	hyprgraphics
