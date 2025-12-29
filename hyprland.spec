@@ -138,7 +138,7 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 
 
 %build
-%make_build all
+%make_build prefix=/usr all
 
 %install
 %make_install
