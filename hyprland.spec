@@ -151,6 +151,7 @@ export CXX=g++
 %{_bindir}/hyprland
 %{_bindir}/hyprctl
 %{_bindir}/hyprpm
+%{_bindir}/start-hyprland
 %{_datadir}/hypr/hyprland.conf
 %{_datadir}/hypr/wall0.png
 %{_datadir}/hypr/wall1.png
