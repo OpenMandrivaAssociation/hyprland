@@ -65,7 +65,7 @@ Requires:	aquamarine
 
 Recommends:	xdg-desktop-portal-hyprland
 Recommends:	kitty
-Recommends:     wofi
+Recommends:     hyprlauncher
 Recommends:     playerctl
 Recommends:     brightnessctl
 Recommends:     hyprland-guiutils
