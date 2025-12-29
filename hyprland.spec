@@ -53,6 +53,8 @@ BuildRequires:	pkgconfig(aquamarine)
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(xcb-errors)
 BuildRequires:	glaze-devel
+BuildRequires:	pkgconfig(libinotify)
+BuildRequires:	pkgconfig(hyprwire)
 
 Requires:	hyprcursor
 Requires:	hyprgraphics
