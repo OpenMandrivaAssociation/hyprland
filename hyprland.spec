@@ -7,11 +7,10 @@ License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 
-BuildRequires:  cmake
+BuildRequires:  make
 BuildRequires:  git
 BuildRequires:  glslang-devel
 BuildRequires:  jq
-BuildRequires:  meson
 BuildRequires:	mold
 BuildRequires:	hyprlang
 BuildRequires:  pkgconfig(hyprland-protocols)
@@ -22,6 +21,7 @@ BuildRequires:	pkgconfig(hyprgraphics)
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(muparser)
 BuildRequires:  pkgconfig(gbm) >= 17.1.0
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(glesv2)
@@ -124,23 +124,22 @@ Requires:	pkgconfig(xcb-icccm)
 
 rm -rf subprojects/{tracy,hyprland-protocols}
 # don't run generateVersion.sh, release tarballs have pregenerated version.h
-sed -i '/scripts\/generateVersion.sh/d' meson.build
+#sed -i '/scripts\/generateVersion.sh/d' meson.build
 
-%build
 # Try use mold if compiled with GCC
-%global optflags %{optflags} -fuse-ld=mold
+#%global optflags %{optflags} -fuse-ld=mold
 
 # This CrapLANG crashing during compilation time. I dont wana see it here anymore. Switch to GCC.
 # Also aquamarine compiled with CrapLANG crashing at runtime. What a shitty compiler.
-export CC=gcc
-export CXX=g++
-# %meson \
-	 -Dwlroots:xcb-errors=enabled
-%meson_build
+#export CC=gcc
+#export CXX=g++
+
+
+%build
+%make_build all
 
 %install
-%meson_install
-#--tags runtime,man,xwayland,systemd,uwsm,hyprpm
+%make_install
 
 %files
 %license LICENSE
