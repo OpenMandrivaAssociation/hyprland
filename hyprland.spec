@@ -146,33 +146,33 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 %files
 %license LICENSE
 %doc README.md
-#%{_bindir}/Hyprland
-#%{_bindir}/hyprland
-#%{_bindir}/hyprctl
-#%{_bindir}/hyprpm
-#%{_datadir}/hypr/hyprland.conf
-#%{_datadir}/hypr/wall0.png
-#%{_datadir}/hypr/wall1.png
-#%{_datadir}/hypr/wall2.png
-#%{_datadir}/hypr/lockdead.png
-#%{_datadir}/hypr/lockdead2.png
-#%dir %{_datadir}/wayland-sessions/
-#%{_datadir}/wayland-sessions/%{name}.desktop
-#%dir %{_datadir}/xdg-desktop-portal
-#%{_datadir}/xdg-desktop-portal/%{name}-portals.conf
-#%{_datadir}/bash-completion/completions/hyprctl
-# %{_datadir}/bash-completion/completions/hyprpm
-# %{_datadir}/fish/vendor_completions.d/hyprctl.fish
-# %{_datadir}/fish/vendor_completions.d/hyprpm.fish
-# %{_datadir}/zsh/site-functions/_hyprctl
-# %{_datadir}/zsh/site-functions/_hyprpm
-# %{_mandir}/man1/Hyprland.*
-# %{_mandir}/man1/hyprctl.*
+%{_bindir}/Hyprland
+%{_bindir}/hyprland
+%{_bindir}/hyprctl
+%{_bindir}/hyprpm
+%{_datadir}/hypr/hyprland.conf
+%{_datadir}/hypr/wall0.png
+%{_datadir}/hypr/wall1.png
+%{_datadir}/hypr/wall2.png
+%{_datadir}/hypr/lockdead.png
+%{_datadir}/hypr/lockdead2.png
+%dir %{_datadir}/wayland-sessions/
+%{_datadir}/wayland-sessions/%{name}.desktop
+%dir %{_datadir}/xdg-desktop-portal
+%{_datadir}/xdg-desktop-portal/%{name}-portals.conf
+%{_datadir}/bash-completion/completions/hyprctl
+%{_datadir}/bash-completion/completions/hyprpm
+%{_datadir}/fish/vendor_completions.d/hyprctl.fish
+%{_datadir}/fish/vendor_completions.d/hyprpm.fish
+%{_datadir}/zsh/site-functions/_hyprctl
+%{_datadir}/zsh/site-functions/_hyprpm
+%{_mandir}/man1/Hyprland.*
+%{_mandir}/man1/hyprctl.*
 
 %files uwsm
-# %{_datadir}/wayland-sessions/hyprland-uwsm.desktop
+%{_datadir}/wayland-sessions/hyprland-uwsm.desktop
 
 %files devel
-# %{_datadir}/pkgconfig/hyprland.pc
-# %{_includedir}/hyprland
-# %{_includedir}/src/version.h
+%{_datadir}/pkgconfig/hyprland.pc
+%{_includedir}/hyprland
+%{_includedir}/src/version.h
