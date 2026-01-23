@@ -1,8 +1,8 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.53.1
-Release:        2
+Version:        0.53.2
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
