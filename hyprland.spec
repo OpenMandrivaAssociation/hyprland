@@ -8,6 +8,7 @@ Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
+Patch0:		https://github.com/hyprwm/Hyprland/commit/116537b494b84ef3aea241db657a8b4bdaf3da9d.patch
 
 BuildRequires:  make
 BuildRequires:	cmake
