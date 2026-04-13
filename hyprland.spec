@@ -1,14 +1,13 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.53.3
-Release:        2
+Version:        0.54.3
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hyprland.org/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
-Patch0:		https://github.com/hyprwm/Hyprland/commit/116537b494b84ef3aea241db657a8b4bdaf3da9d.patch
 
 BuildRequires:  make
 BuildRequires:	cmake
@@ -36,6 +35,7 @@ BuildRequires:  pkgconfig(libinput) >= 1.14.0
 BuildRequires:	pkgconfig(libliftoff)
 BuildRequires:  pkgconfig(libseat) >= 0.2.0
 BuildRequires:  pkgconfig(libudev)
+BuildRequires:  pkgconfig(libinotify)
 BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
@@ -66,12 +66,12 @@ Requires:	aquamarine
 
 Recommends:	xdg-desktop-portal-hyprland
 Recommends:	kitty
-Recommends:     hyprlauncher
-Recommends:     playerctl
-Recommends:     brightnessctl
-Recommends:     hyprland-guiutils
-Recommends:     mesa-dri-drivers
-Recommends:     polkit
+Recommends: hyprlauncher
+Recommends: playerctl
+Recommends: brightnessctl
+Recommends: hyprland-guiutils
+Recommends: mesa-dri-drivers
+Recommends: polkit
 
 %description
 Hyprland is a dynamic tiling Wayland compositorthat doesn't sacrifice on its looks.
