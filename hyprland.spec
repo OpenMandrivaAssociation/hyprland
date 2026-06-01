@@ -1,7 +1,7 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.54.3
+Version:        0.55.2
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -13,9 +13,10 @@ BuildRequires:  make
 BuildRequires:	cmake
 BuildRequires:  git
 BuildRequires:  glslang-devel
+BuildRequires:	glslang
 BuildRequires:  jq
 BuildRequires:	mold
-BuildRequires:	hyprlang
+BuildRequires:	pkgconfig(hyprlang)
 BuildRequires:  pkgconfig(hyprland-protocols)
 BuildRequires:	pkgconfig(hyprcursor)
 BuildRequires:	pkgconfig(hyprwayland-scanner)
@@ -28,7 +29,9 @@ BuildRequires:  pkgconfig(muparser)
 BuildRequires:  pkgconfig(gbm) >= 17.1.0
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(glesv2)
+BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(hwdata)
+BuildRequires:	pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libdisplay-info)
 BuildRequires:  pkgconfig(libdrm) >= 2.4.118
 BuildRequires:  pkgconfig(libinput) >= 1.14.0
@@ -36,6 +39,7 @@ BuildRequires:	pkgconfig(libliftoff)
 BuildRequires:  pkgconfig(libseat) >= 0.2.0
 BuildRequires:  pkgconfig(libudev)
 #BuildRequires:  pkgconfig(libinotify)
+BuildRequires:	pkgconfig(lua) >= 5.4.8
 BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
@@ -63,9 +67,10 @@ BuildRequires:	hyprwire
 Requires:	hyprcursor
 Requires:	hyprgraphics
 Requires:	aquamarine
+Requires:	lua >= 5.4.8
 
-Recommends:	xdg-desktop-portal-hyprland
-Recommends:	kitty
+Recommends: xdg-desktop-portal-hyprland
+Recommends: kitty
 Recommends: hyprlauncher
 Recommends: playerctl
 Recommends: brightnessctl
@@ -153,7 +158,8 @@ export CXX=g++
 %{_bindir}/hyprctl
 %{_bindir}/hyprpm
 %{_bindir}/start-hyprland
-%{_datadir}/hypr/hyprland.conf
+%{_datadir}/hypr/hyprland.lua
+%{_datadir}/hypr/stubs/hl.meta.lua
 %{_datadir}/hypr/wall0.png
 %{_datadir}/hypr/wall1.png
 %{_datadir}/hypr/wall2.png
