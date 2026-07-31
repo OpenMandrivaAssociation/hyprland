@@ -1,7 +1,7 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.55.4
+Version:        0.56.1
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -131,7 +131,7 @@ Requires:	pkgconfig(xcb-icccm)
 
 
 %prep
-%autosetup -n %{name}-source -p1
+%autosetup -n hyprland-source -p1
 
 rm -rf subprojects/{tracy,hyprland-protocols}
 
