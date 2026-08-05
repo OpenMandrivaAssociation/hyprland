@@ -6,7 +6,7 @@ Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
-URL:            https://hyprland.org/
+URL:            https://hypr.land/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 
 BuildRequires:  make
