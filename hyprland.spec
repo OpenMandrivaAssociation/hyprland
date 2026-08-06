@@ -45,6 +45,7 @@ BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
 BuildRequires:	pkgconfig(re2)
+BuildRequires:	pkgconfig(readline)
 BuildRequires:	pkgconfig(tomlplusplus)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(vulkan) >= 1.2.182
