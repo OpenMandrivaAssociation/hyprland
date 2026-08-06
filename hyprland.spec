@@ -1,7 +1,7 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.56.1
+Version:        0.56.2
 Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
@@ -34,6 +34,7 @@ BuildRequires:  pkgconfig(hwdata)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libdisplay-info)
 BuildRequires:  pkgconfig(libdrm) >= 2.4.118
+BuildRequires:	pkgconfig(libeis-1.0)
 BuildRequires:  pkgconfig(libinput) >= 1.14.0
 BuildRequires:	pkgconfig(libliftoff)
 BuildRequires:  pkgconfig(libseat) >= 0.2.0
@@ -63,6 +64,7 @@ BuildRequires:  pkgconfig(xcb-errors)
 BuildRequires:	glaze-devel
 BuildRequires:	pkgconfig(hyprwire)
 BuildRequires:	hyprwire
+BuildRequires:	atomic-devel
 
 Requires:	hyprcursor
 Requires:	hyprgraphics
