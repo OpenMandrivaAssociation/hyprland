@@ -1,6 +1,6 @@
-diff -uraN source-v0.56.2/hyprland-source/CMakeLists.txt omv-source-v0.56.2/hyprland-source/CMakeLists.txt
---- source-v0.56.2/hyprland-source/CMakeLists.txt	2026-08-05 16:14:14.000000000 +0200
-+++ omv-source-v0.56.2/hyprland-source/CMakeLists.txt	2026-08-31 23:03:45.680944210 +0200
+diff -uraN hyprland-source/CMakeLists.txt omv-hyprland-source/CMakeLists.txt
+--- hyprland-source/CMakeLists.txt	2026-08-05 16:14:14.000000000 +0200
++++ omv-hyprland-source/CMakeLists.txt	2026-08-31 23:03:45.680944210 +0200
 @@ -130,9 +130,9 @@
  find_package(OpenGL REQUIRED COMPONENTS ${GLES_VERSION})
  find_package(glslang CONFIG REQUIRED)
@@ -13,9 +13,9 @@ diff -uraN source-v0.56.2/hyprland-source/CMakeLists.txt omv-source-v0.56.2/hypr
    message(STATUS "glaze dependency not found, retrieving ${GLAZE_VERSION} with FetchContent")
    include(FetchContent)
    FetchContent_Declare(
-diff -uraN source-v0.56.2/hyprland-source/hyprpm/CMakeLists.txt omv-source-v0.56.2/hyprland-source/hyprpm/CMakeLists.txt
---- source-v0.56.2/hyprland-source/hyprpm/CMakeLists.txt	2026-08-05 16:14:14.000000000 +0200
-+++ omv-source-v0.56.2/hyprland-source/hyprpm/CMakeLists.txt	2026-08-31 23:04:29.873104600 +0200
+diff -uraN hyprland-source/hyprpm/CMakeLists.txt omv-hyprland-source/hyprpm/CMakeLists.txt
+--- hyprland-source/hyprpm/CMakeLists.txt	2026-08-05 16:14:14.000000000 +0200
++++ omv-hyprland-source/hyprpm/CMakeLists.txt	2026-08-31 23:04:29.873104600 +0200
 @@ -12,10 +12,10 @@
  pkg_check_modules(hyprpm_deps REQUIRED IMPORTED_TARGET tomlplusplus hyprutils>=0.7.0)
  
