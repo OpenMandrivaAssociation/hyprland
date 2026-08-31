@@ -141,6 +141,9 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 # don't run generateVersion.sh, release tarballs have pregenerated version.h
 #sed -i '/scripts\/generateVersion.sh/d' meson.build
 
+# Allow build with new Glaze 8.0.0
+sed -e  's|7.2.0|8.0.0|' -i hyprpm/CMakeLists.txt
+
 # Try use mold if compiled with GCC
 %global optflags %{optflags} -fuse-ld=mold
 
