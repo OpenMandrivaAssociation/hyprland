@@ -1,15 +1,15 @@
 # As of 0.53.0 meson has been removed
 
 Name:           hyprland
-Version:        0.56.2
-Release:        3
+Version:        0.57.0
+Release:        1
 Summary:        Dynamic tiling Wayland compositor
 Group:          Hyprland
 License:        BSD-3-Clause
 URL:            https://hypr.land/
 Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 # Fix build with Glaze 8.0.0
-Patch0:		fix-build-glaze-8.0.0.patch
+#Patch0:		fix-build-glaze-8.0.0.patch
 
 BuildRequires:  make
 BuildRequires:	cmake
@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(hwdata)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:  pkgconfig(libdisplay-info)
+BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:  pkgconfig(libdrm) >= 2.4.118
 BuildRequires:	pkgconfig(libeis-1.0)
 BuildRequires:  pkgconfig(libinput) >= 1.14.0
@@ -48,6 +49,7 @@ BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(pixman-1) >= 0.42.0
 BuildRequires:	pkgconfig(re2)
 BuildRequires:	pkgconfig(readline)
+BuildRequires:	pkgconfig(sdbus-c++)
 BuildRequires:	pkgconfig(tomlplusplus)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(vulkan) >= 1.2.182
@@ -174,11 +176,8 @@ export CXX=g++
 %{_datadir}/wayland-sessions/%{name}.desktop
 %dir %{_datadir}/xdg-desktop-portal
 %{_datadir}/xdg-desktop-portal/%{name}-portals.conf
-%{_datadir}/bash-completion/completions/hyprctl
 %{_datadir}/bash-completion/completions/hyprpm
-%{_datadir}/fish/vendor_completions.d/hyprctl.fish
 %{_datadir}/fish/vendor_completions.d/hyprpm.fish
-%{_datadir}/zsh/site-functions/_hyprctl
 %{_datadir}/zsh/site-functions/_hyprpm
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
