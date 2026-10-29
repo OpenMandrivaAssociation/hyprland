@@ -145,6 +145,12 @@ rm -rf subprojects/{tracy,hyprland-protocols}
 # don't run generateVersion.sh, release tarballs have pregenerated version.h
 #sed -i '/scripts\/generateVersion.sh/d' meson.build
 
+# As of 0.57.0, hyprland install systemd .target files but it uses the wrong directory for this:
+#  install(FILES ${CMAKE_SOURCE_DIR}/systemd/hyprland-session.target
+#          DESTINATION ${CMAKE_INSTALL_LIBDIR}/systemd/user)
+# Lets workaround it to /usr/lib/ instead of /usr/lib64/
+sed -i 's|{CMAKE_INSTALL_LIBDIR}/systemd/user|{CMAKE_INSTALL_PREFIX}/lib/systemd/user|g' CMakeLists.txt
+
 # Try use mold if compiled with GCC
 %global optflags %{optflags} -fuse-ld=mold
 
@@ -181,6 +187,8 @@ export CXX=g++
 %{_datadir}/zsh/site-functions/_hyprpm
 %{_mandir}/man1/Hyprland.*
 %{_mandir}/man1/hyprctl.*
+
+%{_prefix}/lib/systemd/user/hyprland-session.target
 
 %files uwsm
 %{_datadir}/wayland-sessions/hyprland-uwsm.desktop
